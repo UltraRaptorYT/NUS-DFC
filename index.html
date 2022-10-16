@@ -33,14 +33,33 @@
         <img id="text2" src="img/text2.png" />
         <img id="text3" src="img/text3.png" />
         <img id="text4" src="img/text4.png" />
+        <a-asset-item id="bed-obj" src="models/Bed.obj"></a-asset-item>
+        <a-asset-item id="bed-mtl" src="models/Bed.mtl"></a-asset-item>
       </a-assets>
 
-      <a-entity position="0 0 0" rotation="0 0 0" wasd-controls="acceleration:100">
-        <a-camera position="0 0 0" near="0.1" twoway-motion="speed: 35"></a-camera>
+      <a-entity
+        position="0 0 0"
+        rotation="0 0 0"
+        wasd-controls="acceleration:100"
+      >
+        <a-camera
+          position="0 0 0"
+          near="0.1"
+          twoway-motion="speed: 35"
+        ></a-camera>
       </a-entity>
       <!-- <a-entity camera look-controls wasd-controls="acceleration:100" position="0 0 -100"></a-entity> -->
 
-      <a-entity position="0 0 -3">
+      <a-entity position="0 -5 -5">
+        <a-obj-model
+          src="#bed-obj"
+          mtl="#bed-mtl"
+          rotation="0 0 0"
+          scale="1 1 1"
+        ></a-obj-model>
+      </a-entity>
+
+    <a-entity position="0 0 -3">
         <a-gltf-model
           src="#engine"
           rotation="90 0 0"
@@ -374,6 +393,7 @@
           event-set__loaded="_delay: 1300"
         ></a-image>
       </a-entity>
+
 
       <a-entity id="schematic-1" position="0 0 -3">
         <a-image
